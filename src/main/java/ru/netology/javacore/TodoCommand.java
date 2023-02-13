@@ -29,13 +29,12 @@ public class TodoCommand {
 
     public static String scannerType() throws IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите тип операции: ADD - добавить; REMOVE - удалить; RESTORE - отмена последнего действия, " +
-                "и через пробел название задачи");
-        String[] input = scanner.nextLine().split(" ");
-        String typeScan = input[0].toLowerCase();
+        System.out.println("Введите тип операции: ADD - добавить; REMOVE - удалить; RESTORE - отмена последнего действия");
+        String typeScan = scanner.nextLine().toLowerCase();
         String taskScan;
         if (!"restore".equals(typeScan)) {
-        taskScan = input[1];
+            System.out.println("Введите название задачи");
+        taskScan = scanner.nextLine();
         } else {
             taskScan = null;
         }
